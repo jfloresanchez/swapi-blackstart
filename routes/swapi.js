@@ -17,11 +17,9 @@ router.get('/swapi/peoples/:page', async (req, res = response) => {
             peoples.addPeople(new People(peoplesResult.results[i]));
         }
         res.json({
-            //ok: true,
-            //page: `page:[${page}] items:[${peoples.getPeoples().length}]`,
-            //peoples: peoples.getPeoples()
-            copiar_desde_llave: peoples.getPeoples()
-
+            ok: true,
+            page: `page:[${page}] items:[${peoples.getPeoples().length}]`,
+            peoples: peoples.getPeoples()
         });
 
     } catch (error) {

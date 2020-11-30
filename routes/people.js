@@ -20,10 +20,10 @@ router.post('/api/peoples', async (req, res) => {
     try {
         // Password should be encypted before inserting user
         await pool.query('INSERT INTO peoples SET ?', [req.body]);
-        res.json({status: 'created'});
-    } catch(err) {
+        res.json({ status: 'created' });
+    } catch (err) {
         console.log(err);
-        res.json({status: 'error'});
+        res.json({ status: 'error', err });
     }
 });
 
@@ -32,9 +32,9 @@ router.put('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
         await pool.query('UPDATE peoples SET ? WHERE id = ?', [req.body, id]);
-        res.json({status: 'updated'});
-    } catch(err) {
-        res.json({status: 'error'});
+        res.json({ status: 'updated' });
+    } catch (err) {
+        res.json({ status: 'error', err });
     }
 });
 
@@ -43,9 +43,9 @@ router.delete('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
         await pool.query('DELETE FROM peoples WHERE id = ?', id);
-        res.json({status: 'deleted'});
-    } catch(err) {
-        res.json({status: 'error'});
+        res.json({ status: 'deleted' });
+    } catch (err) {
+        res.json({ status: 'error', err });
     }
 });
 
