@@ -27,7 +27,7 @@ router.post('/api/peoples', async (req, res) => {
     }
 });
 
-// Update contact
+// Update people
 router.put('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -38,7 +38,7 @@ router.put('/api/peoples/:id', async (req, res) => {
     }
 });
 
-// Delete Contact
+// Delete people
 router.delete('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
