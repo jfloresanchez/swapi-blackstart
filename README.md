@@ -11,7 +11,8 @@
 # Instalaciones. [local]:
 #### linea de comando terminal (en el proyecto raiz)
 
-`$ npm install`
++ $ npm install
++ $ npm run start:dev 
 
 
 ##### Proyecto SWAPI
