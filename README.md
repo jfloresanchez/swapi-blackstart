@@ -8,12 +8,6 @@
 
 # Postman: [Doc API]
 `<link>` https://documenter.getpostman.com/view/2552453/TVmJjKxQ
-# Instalaciones. [local]:
-#### linea de comando terminal (en el proyecto raiz)
-
-+ $ npm install
-+ $ npm run start:dev 
-
 
 ##### Proyecto SWAPI
 
@@ -23,6 +17,7 @@
     + keys.js
 
 `archivo keys.js debe ser cambiado por credenciales de servidor mysql`
+
 ```javascript
 module.exports = {
     database: {
@@ -32,6 +27,12 @@ module.exports = {
         database: 'blackstart'
     }
 };
+```
+# Instalaciones. [local]:
+#### linea de comando terminal (en el proyecto raiz)
+
++ $ npm install
++ $ npm run start:dev 
 
 
     
