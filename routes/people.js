@@ -18,7 +18,7 @@ router.get('/api/peoples/:id', async (req, res) => {
 // Create people
 router.post('/api/peoples', async (req, res) => {
     try {
-        // Password should be encypted before inserting user
+        formatBody(req);
         await pool.query('INSERT INTO peoples SET ?', [req.body]);
         res.json({ status: 'created' });
     } catch (err) {
@@ -31,6 +31,7 @@ router.post('/api/peoples', async (req, res) => {
 router.put('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
+        formatBody(req);
         await pool.query('UPDATE peoples SET ? WHERE id = ?', [req.body, id]);
         res.json({ status: 'updated' });
     } catch (err) {
@@ -43,10 +44,18 @@ router.delete('/api/peoples/:id', async (req, res) => {
     try {
         const { id } = req.params;
         await pool.query('DELETE FROM peoples WHERE id = ?', id);
-        res.json({ status: 'deleted' });
+        pool.
+            res.json({ status: 'deleted' });
     } catch (err) {
         res.json({ status: 'error', err });
     }
 });
+
+function formatBody(req) {
+    req.body.pelicula = req.body.pelicula != null ? JSON.stringify(req.body.pelicula) : "";
+    req.body.especie = req.body.especie != null ? JSON.stringify(req.body.especie) : "";
+    req.body.vehiculo = req.body.vehiculo != null ? JSON.stringify(req.body.vehiculo) : "";
+    req.body.nave_estelar = req.body.nave_estelar != null ? JSON.stringify(req.body.nave_estelar) : "";
+}
 
 module.exports = router;
