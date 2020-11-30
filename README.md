@@ -1,10 +1,4 @@
-# Blackstart []
-+ nodejs
-+ mysql
-+ swapi
-+ docker
-+ postman
-
+# Blackstart [nodejs, mysql, swapi, docker, postman]
 
 # Postman: [Doc API]
 `<link>` https://documenter.getpostman.com/view/2552453/TVmJjKxQ
