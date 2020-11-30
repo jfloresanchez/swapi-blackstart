@@ -4,8 +4,8 @@ mysql
 swapi
 
 # Postman: [Doc API]
-`<link>` <https://documenter.getpostman.com/view/2552453/TVmJjKxQ>
-
+`<link>` 
+<a href="<https://documenter.getpostman.com/view/2552453/TVmJjKxQ>" target="_blank">Documnetación de API</a>
 # Instalaciones. [local]:
 #### linea de comando terminal (en el proyecto raiz)
 
