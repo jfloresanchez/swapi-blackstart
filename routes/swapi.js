@@ -8,14 +8,16 @@ router.get('/swapi/peoples/:page', async (req, res = response) => {
     try {
         const peoples = new Peoples();
         const page = req.params.page;
+        //let peoplesResult = [];
 
         const peoplesResult = await swapi
             .get(`${process.env.URL}/people/?page=${page}`)
-            .then((result) => result);
+            .then((result) => result.results);
 
-        for (let i = 0; i < peoplesResult.results.length; i++) {
-            peoples.addPeople(new People(peoplesResult.results[i]));
+        for (const people of peoplesResult) {
+            peoples.addPeople(new People(people));
         }
+
         res.json({
             ok: true,
             page: `page:[${page}] items:[${peoples.getPeoples().length}]`,
